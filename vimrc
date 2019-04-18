@@ -118,7 +118,7 @@ Plugin 'xuhdev/vim-latex-live-preview'
 
 " " ------------------Barra separadora -----------
  call vundle#end()
- let g:airline#extensions#tabline#enabled = 1
+ let g:airline#extensions#tabline#enabled = 0
  let g:syntastic_always_populate_loc_list = 1
  let g:syntastic_auto_loc_list = 1
  let g:syntastic_check_on_open = 1
@@ -233,6 +233,7 @@ autocmd FileType html inoremap ,im <img src="" alt="<++>"><++><esc>Fcf"a
 autocmd FileType html inoremap ,td <td></td><++><Esc>Fdcit
 autocmd FileType html inoremap ,tr <tr></tr><Enter><++><Esc>kf<i
 autocmd FileType html inoremap ,th <th></th><++><Esc>Fhcit
+autocmd FileType html inoremap ,div <div></div><Enter><Space><Space><++><Esc>0kf<i
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
@@ -319,7 +320,7 @@ autocmd FileType tex inoremap ,x \begin{xlist}<Enter>\ex<Space><Enter>\end{xlist
 autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd FileType tex inoremap ,li <Enter>\item<Space>
-autocmd FileType tex inoremap ,ref \ref{}<Space>(<++>)<Esc>T{i
+autocmd FileType tex inoremap ,ref \ref{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ,tab \begin{tabular}<Enter><++><Enter>\end{tabular}<Enter><Enter><++><Esc>4kA{}<Esc>i
 autocmd FileType tex inoremap ,ot \begin{tableau}<Enter>\inp{<++>}<Tab>\const{<++>}<Tab><++><Enter><++><Enter>\end{tableau}<Enter><Enter><++><Esc>5kA{}<Esc>i
 autocmd FileType tex inoremap ,can \cand{}<Tab><++><Esc>T{i
