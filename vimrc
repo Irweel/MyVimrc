@@ -360,6 +360,6 @@ autocmd Filetype markdown,rmd inoremap ,1 #<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,rmd inoremap ,2 ##<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,rmd inoremap ,3 ###<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,rmd inoremap ,l --------<Enter>
-autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
-autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
-autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
+autocmd Filetype markdown,rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
+autocmd Filetype markdown,rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
+autocmd Filetype markdown,rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
