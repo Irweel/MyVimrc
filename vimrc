@@ -149,7 +149,7 @@ Plugin 'xuhdev/vim-latex-live-preview'
  set wrapscan
  set wildmenu
  set list listchars=tab:\ \ ,trail:·
- set number
+ set number 
  set backspace=2 " make backspace work like most other programs
  set conceallevel=0
 
@@ -189,12 +189,21 @@ Plugin 'xuhdev/vim-latex-live-preview'
      call webdevicons#refresh()
    endif
 
+
+"" Enable autocompletetion:
+  set wildmode=longest,list,full
+
 " Copy selected text to system clipboard (requires gvim/nvim/vim-x11
 " installed):
 "nnoremap <C-y> "+y
 "vnoremap <C-y> "+y
 "map <C-p> "+P
 
+"Automatically deletes all trailing whitespace on save.
+  autocmd BufWritePre * %s/\s\+$//e
+
+:set mouse=n
+:set ttymouse=xterm2
 set background=dark
 "colorscheme atom-dark-256
 ""hi Normal guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE
@@ -223,7 +232,11 @@ autocmd FileType html inoremap ,it <em></em><Space><++><Esc>FeT>i
 autocmd FileType html inoremap ,1 <h1></h1><Enter><Enter><++><Esc>2kf<i
 autocmd FileType html inoremap ,2 <h2></h2><Enter><Enter><++><Esc>2kf<i
 autocmd FileType html inoremap ,3 <h3></h3><Enter><Enter><++><Esc>2kf<i
-autocmd FileType html inoremap ,p <p></p><Enter><Enter><++><Esc>02kf>a
+autocmd FileType html inoremap ,h1 <h1></h1><++><Esc>9hf<i
+autocmd FileType html inoremap ,h2 <h2></h2><++><Esc>9hf<i
+autocmd FileType html inoremap ,h3 <h3></h3><++><Esc>9hf<i
+"autocmd FileType html inoremap ,p <p></p><Enter><Enter><++><Esc>02kf>a
+autocmd FileType html inoremap ,p <p></p><++><Esc>8hf<i
 autocmd FileType html inoremap ,a <a<Space>href=""><++></a><Space><++><Esc>14hi
 autocmd FileType html inoremap ,e <a<Space>target="_blank"<Space>href=""><++></a><Space><++><Esc>14hi
 autocmd FileType html inoremap ,ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
@@ -233,7 +246,8 @@ autocmd FileType html inoremap ,im <img src="" alt="<++>"><++><esc>Fcf"a
 autocmd FileType html inoremap ,td <td></td><++><Esc>Fdcit
 autocmd FileType html inoremap ,tr <tr></tr><Enter><++><Esc>kf<i
 autocmd FileType html inoremap ,th <th></th><++><Esc>Fhcit
-autocmd FileType html inoremap ,div <div></div><Enter><Space><Space><++><Esc>0kf<i
+"autocmd FileType html inoremap ,div <div></div><Enter><Space><Space><++><Esc>0kf<i
+autocmd FileType html inoremap ,div <div<Space>class=""><++></div><Space><++><Esc>16hi
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
@@ -286,9 +300,6 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " disable auto-hide quotes on json-vim
 
-
-:set mouse=n
-:set ttymouse=xterm2
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 
